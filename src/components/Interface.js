@@ -1,5 +1,5 @@
-import './Interface.css';
 import { ROOT_FIELD } from '../constants/root';
+import './Interface.css';
 
 class Interface {
     render() {

@@ -19,15 +19,13 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: 400;
     color: var(--color-black);
 }
 
 .icon-info {
     padding: 15px;
-    font-size: 15px;
-    font-weight: 400;
     color: inherit;
 }
 
@@ -49,4 +47,10 @@ body {
     border-top: 2px solid var(--color-black);
     border-left: 2px solid var(--color-black);
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18vmin;
+    line-height: 1;
 }
