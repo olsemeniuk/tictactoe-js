@@ -1,0 +1,52 @@
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--color-black);
+}
+
+.icon-info {
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 400;
+    color: inherit;
+}
+
+#game-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    display: grid;
+    grid-template-rows: repeat(3, 20vmin);
+    grid-template-columns: repeat(3, 20vmin);
+    border-right: 2px solid var(--color-black);
+    border-bottom: 2px solid var(--color-black);
+}
+
+.game__cell {
+    border-top: 2px solid var(--color-black);
+    border-left: 2px solid var(--color-black);
+    cursor: pointer;
+}
