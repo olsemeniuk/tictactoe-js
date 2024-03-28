@@ -1,0 +1,12 @@
+{
+    "name": "tictactoe-js",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "parcel public/index.html --open",
+        "build": "parcel build public/index.html"
+    },
+    "license": "ISC",
+    "devDependencies": {
+        "parcel": "^2.12.0"
+    }
+}
