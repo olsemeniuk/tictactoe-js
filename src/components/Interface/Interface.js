@@ -1,9 +1,9 @@
-import { ROOT_FIELD } from '../constants/root';
+import { ROOT_FIELD } from '../../constants/root';
 import './Interface.css';
 
 class Interface {
     render() {
-        let htmlContent = "";
+        let htmlContent = '';
         for (let i = 0; i < 9; i++) {
             htmlContent += `<div class="game__cell" data-index=${i}></div>`;
         }

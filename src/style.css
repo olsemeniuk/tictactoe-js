@@ -1,0 +1,36 @@
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+
+    --box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--color-black);
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+}

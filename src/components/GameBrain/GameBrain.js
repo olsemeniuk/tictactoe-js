@@ -1,4 +1,5 @@
-import { ROOT_FIELD } from '../constants/root';
+import { ROOT_FIELD } from '../../constants/root';
+import Notification from '../Notification';
 
 class GameBrain {
     constructor() {
@@ -33,9 +34,24 @@ class GameBrain {
         if (cell.textContent === '') {
             cell.textContent = signToDraw;
             cell.dataset.sign = dataSign;
-            this.activePlayer = this.activePlayer == 1 ? 2 : 1;
+            this.activePlayer = this.activePlayer === 1 ? 2 : 1;
             this.checkIfWin();
         }
+    }
+
+    startNewGame() {
+        this.gameOver = false;
+        this.clearCells();
+        this.activePlayer = 1;
+        Notification.handleClear();
+    }
+
+    clearCells() {
+        const cells = document.querySelectorAll('.game__cell');
+        cells.forEach(cell => {
+            cell.innerHTML = '';
+            cell.dataset.sign = '';
+        });
     }
 
     checkIfWin() {
@@ -64,13 +80,17 @@ class GameBrain {
 
                 if (zeroWin || crossWin) {
                     winner = zeroWin ? 'zero' : 'cross';
+                    zeroCellsCombinations = [];
+                    crossCellsCombinations = [];
                     this.gameOver = true;
                     break;
                 }
             }
 
             if (this.gameOver) {
-                console.log(`${winner} win!`);
+                Notification.render(winner);
+                document.getElementById('restart').addEventListener('click', () => this.startNewGame());
+                document.getElementById('exit').addEventListener('click', () => Notification.handleClear());
             }
         }
     }
